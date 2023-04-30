@@ -1,8 +1,10 @@
-$calculator-color: #a7a7a7;
+$calculator-color: #8d8d8d;
 $display-color: #378d1d;
 $display-font-color: #222222;
 $primary-button-color: #3b3b3b;
 $primary-button-font-color: #eee;
+$red-button-color: #b61717;
+$red-button-font-color: #eee;
 
 * {
    box-sizing: border-box;
@@ -11,29 +13,28 @@ $primary-button-font-color: #eee;
 #calculator {
    border: 2px solid #111;
    border-radius: 20px;
-   padding: 10px;
+   padding: 15px;
    background-color: $calculator-color;
    margin: 120px auto auto;
    width: 400px;
    height: 500px;
    display: grid;
-   grid-template-columns: auto auto auto auto auto;
-   grid-template-rows: auto auto auto auto auto auto auto;
-   gap: 10px;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr ;
+   gap: 5px;
 }
-
 #ongoingCalculation {
    border: 1px solid #111;
    border-radius: 3px;
    background-color: $display-color;
-   grid-area: 1 / 1 / span 1 / span 7;
+   grid-area: 1 / 1 / 1 / 6;
 }
 
 #result {
    border: 1px solid #111;
    border-radius: 3px;
    background-color: $display-color;
-   grid-area: 2 / 1 / span 2 / span 7;
+   grid-area: 2 / 1 / 2 / 6;
 }
 
 .button {
@@ -41,59 +42,103 @@ $primary-button-font-color: #eee;
    border-radius: 3px;
    background-color: $primary-button-color;
    color: $primary-button-font-color;
+   &:hover{
+      background-color: lighten($primary-button-color, 5%);
+   }
+   &:active{
+      background-color: lighten($primary-button-color, 15%);
+   }
 }
+
+.redButton {
+   border: 1px solid #111;
+   border-radius: 3px;
+   background-color: $red-button-color;
+   color: #eee;
+ }
+ .button:hover {
+   background-color: #484848;
+ }
+ .button:active {
+   background-color: #616161;
+ }
+
 #one {
-   grid-area: 4 / 1 / span 1 / span 1;
+   grid-area: 3 / 1 / span 1 / span 1;
 }
 
 #two {
-   grid-area: 4 / 2 / span 1 / span 1;
+   grid-area: 3 / 2 / span 1 / span 1;
 }
 
 #three {
-   grid-area: 4 / 3 / span 1 / span 1;
+   grid-area: 3 / 3 / span 1 / span 1;
 }
 
 #four {
-   grid-area: 5 / 1 / span 1 / span 1;
+   grid-area: 4 / 1 / span 1 / span 1;
 }
 
 #five {
-   grid-area: 5 / 2 / span 1 / span 1;
+   grid-area: 4 / 2 / span 1 / span 1;
 }
 
 #six {
-   grid-area: 5 / 3 / span 1 / span 1;
+   grid-area: 4 / 3 / span 1 / span 1;
 }
 
 #seven {
-   grid-area: 6 / 1 / span 1 / span 1;
+   grid-area: 5 / 1 / span 1 / span 1;
 }
 
 #eight {
-   grid-area: 6 / 2 / span 1 / span 1;
+   grid-area: 5 / 2 / span 1 / span 1;
 }
 
 #nine {
-   grid-area: 6 / 3 / span 1 / span 1;
+   grid-area: 5 / 3 / span 1 / span 1;
 }
 
 #zero {
-   grid-area: 7 / 2 / span 1 / span 1;
+   grid-area: 6 / 2 / span 1 / span 1;
 }
 
 #plus {
-   grid-area: 4 / 4 / span 1 / span 1;
+   grid-area: 3 / 4 / span 1 / span 1;
 }
 
 #minus {
-   grid-area: 5 / 4 / span 1 / span 1;
+   grid-area: 4 / 4 / span 1 / span 1;
 }
 
 #multiply {
-   grid-area: 6 / 4 / span 1 / span 1;
+   grid-area: 5 / 4 / span 1 / span 1;
 }
 
 #divide {
-   grid-area: 7 / 4 / span 1 / span 1;
+   grid-area: 6 / 4 / span 1 / span 1;
+}
+
+#equal {
+   grid-area: 6 / 5 / span 1 / span 1;
+}
+
+#ac {
+   grid-area: 3 / 5 / span 1 / span 1;
+}
+
+#sign {
+   grid-area: 6 / 1 / span 1 / span 1;
+}
+
+#point {
+   grid-area: 6 / 3 / span 1 / span 1;
+}
+
+#back {
+   grid-area: 4 / 5 / span 1 / span 1;
+}
+
+#percent {
+   grid-area: 5 / 5 / span 1 / span 1;
 }
