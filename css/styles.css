@@ -49,13 +49,11 @@
   background-color: #b61717;
   color: #eee;
 }
-
-.button:hover {
-  background-color: #484848;
+.redButton:hover {
+  background-color: #cd1a1a;
 }
-
-.button:active {
-  background-color: #616161;
+.redButton:active {
+  background-color: #e53434;
 }
 
 #one {

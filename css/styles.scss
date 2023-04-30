@@ -55,13 +55,13 @@ $red-button-font-color: #eee;
    border-radius: 3px;
    background-color: $red-button-color;
    color: #eee;
- }
- .button:hover {
-   background-color: #484848;
- }
- .button:active {
-   background-color: #616161;
- }
+   &:hover {
+      background-color: lighten($red-button-color, 5%);
+   }
+   &:active {
+      background-color: lighten($red-button-color, 15%);
+   }
+}
 
 #one {
    grid-area: 3 / 1 / span 1 / span 1;
