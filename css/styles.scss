@@ -1,7 +1,99 @@
+$calculator-color: #a7a7a7;
+$display-color: #378d1d;
+$display-font-color: #222222;
+$primary-button-color: #3b3b3b;
+$primary-button-font-color: #eee;
+
+* {
+   box-sizing: border-box;
+}
+
 #calculator {
    border: 2px solid #111;
    border-radius: 20px;
+   padding: 10px;
+   background-color: $calculator-color;
    margin: 120px auto auto;
    width: 400px;
    height: 500px;
+   display: grid;
+   grid-template-columns: auto auto auto auto auto;
+   grid-template-rows: auto auto auto auto auto auto auto;
+   gap: 10px;
+}
+
+#ongoingCalculation {
+   border: 1px solid #111;
+   border-radius: 3px;
+   background-color: $display-color;
+   grid-area: 1 / 1 / span 1 / span 7;
+}
+
+#result {
+   border: 1px solid #111;
+   border-radius: 3px;
+   background-color: $display-color;
+   grid-area: 2 / 1 / span 2 / span 7;
+}
+
+.button {
+   border: 1px solid #111;
+   border-radius: 3px;
+   background-color: $primary-button-color;
+   color: $primary-button-font-color;
+}
+#one {
+   grid-area: 4 / 1 / span 1 / span 1;
+}
+
+#two {
+   grid-area: 4 / 2 / span 1 / span 1;
+}
+
+#three {
+   grid-area: 4 / 3 / span 1 / span 1;
+}
+
+#four {
+   grid-area: 5 / 1 / span 1 / span 1;
+}
+
+#five {
+   grid-area: 5 / 2 / span 1 / span 1;
+}
+
+#six {
+   grid-area: 5 / 3 / span 1 / span 1;
+}
+
+#seven {
+   grid-area: 6 / 1 / span 1 / span 1;
+}
+
+#eight {
+   grid-area: 6 / 2 / span 1 / span 1;
+}
+
+#nine {
+   grid-area: 6 / 3 / span 1 / span 1;
+}
+
+#zero {
+   grid-area: 7 / 2 / span 1 / span 1;
+}
+
+#plus {
+   grid-area: 4 / 4 / span 1 / span 1;
+}
+
+#minus {
+   grid-area: 5 / 4 / span 1 / span 1;
+}
+
+#multiply {
+   grid-area: 6 / 4 / span 1 / span 1;
+}
+
+#divide {
+   grid-area: 7 / 4 / span 1 / span 1;
 }
