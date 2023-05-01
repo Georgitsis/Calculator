@@ -1,5 +1,6 @@
+let ac = true;   //stands for all clear. is true when calculation has not started yet or been reset to the beginning.
 let result = 0;
-let lastOperand = "0";
+let lastOperand = "";
 let ongoingCalculation = "";
 let operator = "+";
 
@@ -37,117 +38,173 @@ let operator = "+";
    document.querySelector("#plus").addEventListener("click", function() {
       pressPlus();
    });
+   document.querySelector("#minus").addEventListener("click", function() {
+      pressMinus();
+   });
+   document.querySelector("#multiply").addEventListener("click", function() {
+      pressMultiply();
+   });
+   document.querySelector("#divide").addEventListener("click", function() {
+      pressDivide();
+   });
+   
 }
 
 function pressOne() {
-   if(lastOperand === "0")
-      lastOperand = "1";
-   else
-      lastOperand = lastOperand + "1";
-   ongoingCalculation = ongoingCalculation + "1";
+   lastOperand = lastOperand + "1";
+   ac = false;
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressTwo() {
-   if(lastOperand === "0")
-      lastOperand = "2";
-   else
-      lastOperand = lastOperand + "2";
-   ongoingCalculation = ongoingCalculation + "2";
+   lastOperand = lastOperand + "2";
+   ac = false;
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressThree() {
-   if(lastOperand === "0")
-      lastOperand = "3";
-   else
    lastOperand = lastOperand + "3";
-   ongoingCalculation = ongoingCalculation + "3";
+   ac = false;
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressFour() {
-   if(lastOperand === "0")
-   lastOperand = "4";
-   else
    lastOperand = lastOperand + "4";
-   ongoingCalculation = ongoingCalculation + "4";
+   ac = false;
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressFive() {
-   if(lastOperand === "0")
-   lastOperand = "5";
-   else
    lastOperand = lastOperand + "5";
-   ongoingCalculation = ongoingCalculation + "5";
+   ac = false;
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressSix() {
-   if(lastOperand === "0")
-   lastOperand = "6";
-   else
    lastOperand = lastOperand + "6";
-   ongoingCalculation = ongoingCalculation + "6";
+   ac = false;
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressSeven() {
-   if(lastOperand === "0")
-   lastOperand = "7";
-   else
    lastOperand = lastOperand + "7";
-   ongoingCalculation = ongoingCalculation + "7";
+   ac = false;
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressEight() {
-   if(lastOperand === "0")
-   lastOperand = "8";
-   else
    lastOperand = lastOperand + "8";
-   ongoingCalculation = ongoingCalculation + "8";
+   ac = false;
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressNine() {
-   if(lastOperand === "0")
-   lastOperand = "9";
-   else
    lastOperand = lastOperand + "9";
-   ongoingCalculation = ongoingCalculation + "9";
+   ac = false;
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressZero() {
-   if(lastOperand === "0")
-   lastOperand = "0";
-   else
-   lastOperand = lastOperand + "0";
-   ongoingCalculation = ongoingCalculation + "0";
-   document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
+   if(!ac){
+      lastOperand = lastOperand + "0";
+      ac = false;
+      document.querySelector("#result").innerText = lastOperand;
+   }
+
 }
 
 function pressPlus() {
-   result = result + parseFloat(lastOperand);
-   lastOperand = "";
-   ongoingCalculation = ongoingCalculation + "+";
+   ongoingCalculation = ongoingCalculation + lastOperand + " + ";
+      switch (operator) {
+         case "+":
+            result = result + parseFloat(lastOperand);
+            break;
+         case "-":
+            result = result - parseFloat(lastOperand);         
+            break;
+       case "*":
+            result = result * parseFloat(lastOperand);         
+            break;
+         case "/":
+            result = result / parseFloat(lastOperand);         
+            break;
+         default:
+            break;
+      }
+      lastOperand = "";   
+   operator = "+";
    document.querySelector("#result").innerText = result;
    document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
-/*function printOnDisplays () {
-   document.querySelector("#result").innerText = lastOperand;
+function pressMinus() {
+   ongoingCalculation = ongoingCalculation + lastOperand + " - ";
+      switch (operator) {
+         case "+":
+            result = result + parseFloat(lastOperand);
+            break;
+         case "-":
+            result = result - parseFloat(lastOperand);         
+            break;
+       case "*":
+            result = result * parseFloat(lastOperand);         
+            break;
+         case "/":
+            result = result / parseFloat(lastOperand);         
+            break;
+         default:
+            break;
+      }
+      lastOperand = "";   
+   operator = "-";
+   document.querySelector("#result").innerText = result;
    document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
-}*/
+}
+
+function pressMultiply() {
+   ongoingCalculation = ongoingCalculation + lastOperand + " * ";
+      switch (operator) {
+         case "+":
+            result = result + parseFloat(lastOperand);
+            break;
+         case "-":
+            result = result - parseFloat(lastOperand);         
+            break;
+       case "*":
+            result = result * parseFloat(lastOperand);         
+            break;
+         case "/":
+            result = result / parseFloat(lastOperand);         
+            break;
+         default:
+            break;
+      }
+      lastOperand = "";   
+   operator = "*";
+   document.querySelector("#result").innerText = result;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
+}
+
+function pressDivide() {
+   ongoingCalculation = ongoingCalculation + lastOperand + " / ";
+      switch (operator) {
+         case "+":
+            result = result + parseFloat(lastOperand);
+            break;
+         case "-":
+            result = result - parseFloat(lastOperand);         
+            break;
+       case "*":
+            result = result * parseFloat(lastOperand);         
+            break;
+         case "/":
+            result = result / parseFloat(lastOperand);         
+            break;
+         default:
+            break;
+      }
+      lastOperand = "";   
+   operator = "/";
+   document.querySelector("#result").innerText = result;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
+}
