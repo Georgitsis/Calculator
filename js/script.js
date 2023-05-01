@@ -136,6 +136,9 @@ function pressPlus() {
          case "/":
             result = result / parseFloat(lastOperand);         
             break;
+         case "=":
+            document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
+            break;
          default:
             break;
       }
@@ -159,6 +162,9 @@ function pressMinus() {
             break;
          case "/":
             result = result / parseFloat(lastOperand);         
+            break;
+         case "=":
+            document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
             break;
          default:
             break;
@@ -184,6 +190,9 @@ function pressMultiply() {
          case "/":
             result = result / parseFloat(lastOperand);         
             break;
+         case "=":
+            document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
+            break;            
          default:
             break;
       }
@@ -207,6 +216,9 @@ function pressDivide() {
             break;
          case "/":
             result = result / parseFloat(lastOperand);         
+            break;
+         case "=":
+            document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
             break;
          default:
             break;
@@ -235,10 +247,11 @@ function pressEqual() {
          default:
             break;
       }
-      lastOperand = "";   
-   operator = "+";
+      lastOperand = result.toString();
+      operator = "=";
    document.querySelector("#result").innerText = result;
    document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
+   ongoingCalculation = "";
 }
 
 function pressAC() {
