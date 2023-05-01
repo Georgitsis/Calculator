@@ -47,6 +47,9 @@ let operator = "+";
    document.querySelector("#divide").addEventListener("click", function() {
       pressDivide();
    });
+   document.querySelector("#equal").addEventListener("click", function() {
+      pressEqual();
+   });
    
 }
 
@@ -205,6 +208,30 @@ function pressDivide() {
       }
       lastOperand = "";   
    operator = "/";
+   document.querySelector("#result").innerText = result;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
+}
+
+function pressEqual() {
+   ongoingCalculation = ongoingCalculation + lastOperand ;
+      switch (operator) {
+         case "+":
+            result = result + parseFloat(lastOperand);
+            break;
+         case "-":
+            result = result - parseFloat(lastOperand);         
+            break;
+       case "*":
+            result = result * parseFloat(lastOperand);         
+            break;
+         case "/":
+            result = result / parseFloat(lastOperand);         
+            break;
+         default:
+            break;
+      }
+      lastOperand = "";   
+   operator = "+";
    document.querySelector("#result").innerText = result;
    document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
