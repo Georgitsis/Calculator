@@ -53,7 +53,9 @@ let operator = "+";
    document.querySelector("#ac").addEventListener("click", function() {
       pressAC();
    });
-   
+   document.querySelector("#back").addEventListener("click", function() {
+      pressBack();
+   });
 }
 
 function pressOne() {
@@ -247,4 +249,9 @@ function pressAC() {
    ongoingCalculation = "";
    document.querySelector("#result").innerText = "0";
    document.querySelector("#ongoingCalculation").innerText = "";
+}
+
+function pressBack() {
+   lastOperand = lastOperand.slice(0,-1);
+   document.querySelector("#result").innerText = lastOperand;
 }
