@@ -34,6 +34,9 @@ let operator = "+";
    document.querySelector("#zero").addEventListener("click", function() {
       pressZero();
    });
+   document.querySelector("#plus").addEventListener("click", function() {
+      pressPlus();
+   });
 }
 
 function pressOne() {
@@ -43,7 +46,7 @@ function pressOne() {
       lastOperand = lastOperand + "1";
    ongoingCalculation = ongoingCalculation + "1";
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = lastOperand;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressTwo() {
@@ -53,7 +56,7 @@ function pressTwo() {
       lastOperand = lastOperand + "2";
    ongoingCalculation = ongoingCalculation + "2";
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = lastOperand;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressThree() {
@@ -63,7 +66,7 @@ function pressThree() {
    lastOperand = lastOperand + "3";
    ongoingCalculation = ongoingCalculation + "3";
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = lastOperand;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressFour() {
@@ -73,7 +76,7 @@ function pressFour() {
    lastOperand = lastOperand + "4";
    ongoingCalculation = ongoingCalculation + "4";
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = lastOperand;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressFive() {
@@ -83,7 +86,7 @@ function pressFive() {
    lastOperand = lastOperand + "5";
    ongoingCalculation = ongoingCalculation + "5";
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = lastOperand;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressSix() {
@@ -93,7 +96,7 @@ function pressSix() {
    lastOperand = lastOperand + "6";
    ongoingCalculation = ongoingCalculation + "6";
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = lastOperand;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressSeven() {
@@ -103,7 +106,7 @@ function pressSeven() {
    lastOperand = lastOperand + "7";
    ongoingCalculation = ongoingCalculation + "7";
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = lastOperand;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressEight() {
@@ -113,7 +116,7 @@ function pressEight() {
    lastOperand = lastOperand + "8";
    ongoingCalculation = ongoingCalculation + "8";
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = lastOperand;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressNine() {
@@ -123,7 +126,7 @@ function pressNine() {
    lastOperand = lastOperand + "9";
    ongoingCalculation = ongoingCalculation + "9";
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = lastOperand;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
 
 function pressZero() {
@@ -133,5 +136,18 @@ function pressZero() {
    lastOperand = lastOperand + "0";
    ongoingCalculation = ongoingCalculation + "0";
    document.querySelector("#result").innerText = lastOperand;
-   document.querySelector("#ongoingCalculation").innerText = lastOperand;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
 }
+
+function pressPlus() {
+   result = result + parseFloat(lastOperand);
+   lastOperand = "";
+   ongoingCalculation = ongoingCalculation + "+";
+   document.querySelector("#result").innerText = result;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
+}
+
+/*function printOnDisplays () {
+   document.querySelector("#result").innerText = lastOperand;
+   document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
+}*/
