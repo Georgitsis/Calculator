@@ -50,6 +50,9 @@ let operator = "+";
    document.querySelector("#equal").addEventListener("click", function() {
       pressEqual();
    });
+   document.querySelector("#ac").addEventListener("click", function() {
+      pressAC();
+   });
    
 }
 
@@ -234,4 +237,14 @@ function pressEqual() {
    operator = "+";
    document.querySelector("#result").innerText = result;
    document.querySelector("#ongoingCalculation").innerText = ongoingCalculation;
+}
+
+function pressAC() {
+   ac = true;
+   result = 0;
+   lastOperand = "";   
+   operator = "+";
+   ongoingCalculation = "";
+   document.querySelector("#result").innerText = "0";
+   document.querySelector("#ongoingCalculation").innerText = "";
 }
